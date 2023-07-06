@@ -6,7 +6,7 @@ This is the final project for the Software Engineering course (summer 2023) of g
 
 1. Clone the repository:
 ```
-  git clone https://github.com/your-username/project.git
+  git clone https://github.com/SkyjackerFWO/SE_Project.git
 ```
 
 2. Navigate to the project directory:
