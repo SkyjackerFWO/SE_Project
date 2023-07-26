@@ -7,7 +7,7 @@ from streamlit_webrtc import VideoHTMLAttributes, webrtc_streamer
 
 from audio_handling import AudioFrameHandler
 from drowsy_detection import VideoFrameHandler
-from ads import css_string
+
 
 
 # Define the audio file to use.
@@ -15,8 +15,8 @@ alarm_file_path = os.path.join("audio", "wake_up_vi.wav")
 
 # Streamlit Components
 st.set_page_config(
-    page_title="Drowsiness Detection | LearnOpenCV",
-    page_icon="https://learnopencv.com/wp-content/uploads/2017/12/favicon.png",
+    page_title="Drowsiness Detection",
+    page_icon="https://media.licdn.com/dms/image/C4E03AQH6bPZc60xNlw/profile-displayphoto-shrink_800_800/0/1585720891986?e=2147483647&v=beta&t=r-lVoNNR3CB5yQEqNfLrvYumGRtEtjGFig_b6Il2oSUhttps://media.licdn.com/dms/image/C4E03AQH6bPZc60xNlw/profile-displayphoto-shrink_800_800/0/1585720891986?e=2147483647&v=beta&t=r-lVoNNR3CB5yQEqNfLrvYumGRtEtjGFig_b6Il2oSU",
     layout="wide",  # centered, wide
     initial_sidebar_state="expanded",
     
@@ -26,16 +26,16 @@ st.set_page_config(
 col1, col2 = st.columns(spec=[6, 2], gap="medium")
 
 with col1:
-    st.title("Drowsiness Detection!!!🥱😪😴")
+    st.title("Bài tập lớn - Hệ thống phát hiện buồn ngủ")
     with st.container():
         c1, c2 = st.columns(spec=[1, 1])
         with c1:
             # The amount of time (in seconds) to wait before sounding the alarm.
-            WAIT_TIME = st.slider("Seconds to wait before sounding alarm:", 0.0, 5.0, 1.0, 0.25)
+            WAIT_TIME = st.slider("Thời gian đợi trước khi kích hoạt thông báo (giây):", 0.0, 5.0, 1.0, 0.25)
 
         with c2:
             # Lowest valid value of Eye Aspect Ratio. Ideal values [0.15, 0.2].
-            EAR_THRESH = st.slider("Eye Aspect Ratio threshold:", 0.0, 0.4, 0.18, 0.01)
+            EAR_THRESH = st.slider("Ngưỡng cho EAR - Eye Aspect Ratio:", 0.0, 0.4, 0.18, 0.01)
 
 thresholds = {
     "EAR_THRESH": EAR_THRESH,
